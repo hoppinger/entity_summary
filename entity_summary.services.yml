@@ -1,0 +1,30 @@
+services:
+  entity_summary.generator:
+    class: Drupal\entity_summary\Generator
+    arguments: [{ }]
+  entity_summary.caching_generator:
+    class: Drupal\entity_summary\CachingGenerator
+    arguments: ['@entity_summary.generator', '@cache.data']
+  
+  entity_summary.component_generator.fieldable_entity:
+    class: Drupal\entity_summary\ComponentGenerator\FieldableEntityGenerator
+    tags:
+      - { name: entity_summary_component_generator }
+    arguments: ['@entity_field.manager']
+  entity_summary.component_generator.field_item_list:
+    class: Drupal\entity_summary\ComponentGenerator\FieldItemListGenerator
+    tags:
+      - { name: entity_summary_component_generator }
+  entity_summary.component_generator.entity_reference_item:
+    class: Drupal\entity_summary\ComponentGenerator\EntityReferenceItemGenerator
+    tags:
+      - { name: entity_summary_component_generator }
+  entity_summary.component_generator.string_item:
+    class: Drupal\entity_summary\ComponentGenerator\StringItemGenerator
+    tags:
+      - { name: entity_summary_component_generator }
+  entity_summary.component_generator.text_item:
+    class: Drupal\entity_summary\ComponentGenerator\TextItemGenerator
+    tags:
+      - { name: entity_summary_component_generator }
+    arguments: ['@renderer']
