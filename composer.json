@@ -1,0 +1,19 @@
+{
+  "name": "hoppinger/entity_summary",
+  "description": "Drupal module summarize entities",
+  "type": "drupal-module",
+  "license": "GPL-2.0+",
+  "minimum-stability": "dev",
+  "homepage": "https://github.com/hoppinger/entity_summary",
+  "authors": [
+    {
+      "name": "Ashwini Mone",
+      "role": "Maintainer"
+    },
+    {
+      "name": "Rolf van de Krol",
+      "role": "Maintainer"
+    }
+  ],
+  "require": {}
+}
